@@ -14,15 +14,17 @@
     
 <h2>Comments</h2>
 <table class="table table-striped table-bordered">
+<tr>
+  <th>Commenter</strong></th>
+  <th>Comment</th>
+</tr>
 <% @post.comments.each do |comment| %>
 <tr>
   <td>
-    <strong>Commenter:</strong>
     <%= comment.commenter %>
   </td>
 
   <td>
-    <strong>Comment:</strong>
     <%= comment.body %>
   </td>
 </tr>
