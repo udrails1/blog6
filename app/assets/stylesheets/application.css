@@ -12,3 +12,10 @@
  *= require_self
  *= require_tree .
  */
+
+.jumbotron, .navbar, .page-header {
+  background-color: #eeccee;
+  background-image:url('circles.svg');
+  background-size: cover;
+}
+
