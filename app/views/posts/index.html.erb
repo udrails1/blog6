@@ -11,8 +11,8 @@
 
   <% @posts.each do |post| %>
     <tr>
-      <td ><%= post.title.byteslice(0..30) %></td>
-      <td><%= post.text.byteslice(0..80) %></td>
+      <td ><%= post.title.byteslice(0..30) %> <br><small><%= post.created_at %></small> </td>
+      <td><%= post.text.byteslice(0..90) %></td>
       <td align="center"><span class="badge badge-info"><%= post.comments.count %></span></td>
       
       <td><%= link_to 'Show', post_path(post) %></td>

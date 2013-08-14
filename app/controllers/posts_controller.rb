@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
   
   def create
-     @post = Post.new(params[:post].permit(:title, :text)) 
+    @post = Post.new(params[:post].permit(:title, :text, :time)) 
 #    @post = Post.new(post_params) 
 #    @post.save
 #    redirect_to @post
@@ -39,7 +39,7 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    if @post.update(params[:post].permit(:title, :text))
+    if @post.update(params[:post].permit(:title, :text, :time))
      redirect_to @post
     else
       render 'edit'
@@ -54,6 +54,11 @@ class PostsController < ApplicationController
   end
  
 private
+  #use callbacks to share common setup or constraints between actions
+#  def set_post
+#    @post = Post.find(params|:id|)
+#  end
+  
   def post_params
     params.require(:post).permit(:title, :text)
   end

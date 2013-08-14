@@ -2,8 +2,8 @@
   <h1 class="page-header">listing post id <%= @post.id %></h1>
     
   <div class="well large-well">    
-    <p>  <strong>Title:</strong>  <%= @post.title %> </p>
-    <p>  <strong>Text:</strong><blockquote> <%= @post.text %></blockquote> </p>
+     <strong><%= @post.title %></strong><br><small><%= @post.created_at %></small>
+     <pre><%= @post.text %></pre>
   </div>  
    
  
