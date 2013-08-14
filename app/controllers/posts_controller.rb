@@ -16,6 +16,7 @@ class PostsController < ApplicationController
   
   def index
 #    @posts = Post.all
+#             Post.order("id").last          
     @posts = Post.page params[:page]
   end
   
