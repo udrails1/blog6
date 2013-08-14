@@ -1,6 +1,7 @@
-<tr>
+
+<tr >
 <%# gravatar (which should be from email) choices are default, identicon, wavatar, or monsterid %>
-  <td> <%= image_tag("http://gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.commenter.downcase)}?s=20&r=any&default=wavatar&forcedefault=1") %>
+<td><span style="float: left;"><%= image_tag("http://gravatar.com/avatar/#{Digest::MD5.hexdigest(comment.commenter.downcase)}?s=35&r=any&default=identicon&forcedefault=1") %></span>
     <%= comment.commenter %><br> <small><%= comment.created_at %></small>  </td>
   <td> <%= comment.body %>  </td>
 </tr>
