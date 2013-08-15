@@ -12,10 +12,14 @@
  *= require_self
  *= require_tree .
  */
+@import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
 .jumbotron, .navbar, .page-header {
   background-color: #eeccee;
   background-image:url('circles.svg');
   background-size: cover;
+  font-family:"Comfortaa";
 }
+
+h2 { font-family:"Comfortaa"; }
 
