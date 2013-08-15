@@ -12,10 +12,10 @@
   <% @posts.each do |post| %>
     <tr>
       <td ><%= post.title.byteslice(0..30) %> <br><small><%= post.created_at %></small> </td>
-      <td><%= post.text.byteslice(0..90) %></td>
+      <td><%= link_to post.text.byteslice(0..100), post_path(post) %></td>
       <td align="center"><span class="badge badge-info"><%= post.comments.count %></span></td>
       
-      <td><%= link_to 'Show', post_path(post) %></td>
+      <%# td><%= link_to 'Show', post_path(post) ></td %>
       <td><%= link_to 'Edit', edit_post_path(post) %></td>
       <td><%= link_to 'Destroy', post_path(post),
               method: :delete, data: {confirm: 'Are you sure?'} %></td>
