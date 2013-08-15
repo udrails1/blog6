@@ -14,11 +14,16 @@
  */
 @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc2/css/bootstrap-glyphicons.css");
 
+/* this doesn't work */
+.btn a {color: #FFFFFF}
+
+/* #6A5ACD is SlateBlue */
 .jumbotron, .navbar, .page-header {
-  background-color: #eeccee;
+  background-color: #6A5ACD;
   background-image:url('circles.svg');
   background-size: cover;
   font-family:"Comfortaa";
+  color: #FFFFFF;
 }
 
 h2 { font-family:"Comfortaa"; }

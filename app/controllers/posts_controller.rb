@@ -16,8 +16,11 @@ class PostsController < ApplicationController
   
   def index
 #    @posts = Post.all
-#             Post.order("id").last          
-    @posts = Post.page params[:page]
+#             Post.order("id").last 
+#    @posts = Post.page params[:page]     #### this is normal paginated posting in FIFO order of posts
+    # this displays posts with the ones last commented on first - problem - new posts w/o comments still appear at end.    
+    @posts = Post.includes(:comments).order("comments.created_at desc", "posts.created_at desc").page params[:page]
+
   end
   
   def create

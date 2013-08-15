@@ -5,6 +5,11 @@
 
 <%#p>Find me in app/views/welcome/index.html.erb</p %>
 <div class="navbar navbar-fixed-bottom" style="box-shadow: -10px -10px 5px #CCCCCC;" inverse>
+
   <div class="btn navbar-btn btn-large btn-success"><%= link_to "My Blog", posts_path %></div>
+  <%# demonstrates both link to external site w/ confirmation popup & the horror of owl clipart %>
+  <%# http://apidock.com/rails/ActionView/Helpers/UrlHelper/link_to %>  
+  <div style="float: right;" class="btn navbar-btn btn-large btn-info"><%= link_to "this is horrible - show me owl clipart",
+    "http://www.google.com/search?site=imghp&tbm=isch&source=hp&biw=1680&bih=944&q=owls+clipart", :confirm => "are you sure?" %></div>
 </div>
 

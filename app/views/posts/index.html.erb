@@ -28,8 +28,8 @@
   
   <button type="button" class="btn btn-success"><%= link_to 'New post', new_post_path %></button>
   <div class="navbar navbar-fixed-bottom" style="box-shadow: -10px -10px 5px #CCCCCC;" inverse>
-    <div class="btn navbar-btn"><i class="glyphicon glyphicon-home"></i> <%= link_to "Home", "/" %></div>
-    <button type="button" class="btn navbar-btn"><%= link_to 'New post', new_post_path %></button>
+    <div class="btn navbar-btn btn-primary"><i class="glyphicon glyphicon-home"></i> <%= link_to "Home", "/" %></div>
+    <button type="button" class="btn navbar-btn btn-success"><%= link_to 'New post', new_post_path %></button>
     <div style="float: right;" class="btn navbar-btn "><%= paginate @posts %></div>
   </div>
 </div>
