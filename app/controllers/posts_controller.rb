@@ -4,23 +4,28 @@ class PostsController < ApplicationController
   end
   
 #  def create
-  #  render text: params[:post].inspect
+ #  render text: params[:post].inspect
 #    @post = Post.new(params[:post].permit(:title, :text))
 #    @post.save
 #   redirect_to @post
 #  end
+
+# http://stackoverflow.com/questions/15822988/keep-http-authentication-private-in-a-public-github-repo
+# http://stackoverflow.com/questions/13294194/rails-how-to-store-mailer-password-safely#new-answer  
+# also do comments_controller.rb
+#  http_basic_authenticate_with name: ENV['BLOG6_USERNAME'], password: ENV['BLOG6_PASSWORD'], except: [:index, :show]
   
-  def show
-    @post = Post.find(params[:id])
-  end
-  
+# OK, so this is a blog & not a message board - so last created posts really should appear first instead of most recently commented
   def index
 #    @posts = Post.all
 #             Post.order("id").last 
 #    @posts = Post.page params[:page]     #### this is normal paginated posting in FIFO order of posts
-    # this displays posts with the ones last commented on first - problem - new posts w/o comments still appear at end.    
+# this displays posts with the ones last commented on first - problem - new posts w/o comments still appear at end.    
     @posts = Post.includes(:comments).order("comments.created_at desc", "posts.created_at desc").page params[:page]
-
+  end
+  
+  def show
+    @post = Post.find(params[:id])
   end
   
   def create

@@ -1,5 +1,8 @@
 class CommentsController < ApplicationController
 
+#  fix this (see posts_controller.rb 
+#  http_basic_authenticate_with name: "name", password: "password", only: :destroy
+  
   def create
     @post = Post.find(params[:post_id])
     @comment = @post.comments.create(params[:comment].permit(:commenter, :body))
