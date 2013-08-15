@@ -1,11 +1,15 @@
 
-<tr >
+<tr>
 <%# gravatar (which should be from email) choices are default, retro, identicon, wavatar, mm (invariant), blank, or monsterid %>
 <%# use secure.gravatar.com instead if https is needed %>
 <%# unicornify - because there's no breakfast plate avatar generator %>
-<td><span style="float: left;"><%= image_tag("http://cdn.libravatar.org/avatar/#{Digest::MD5.hexdigest(comment.commenter.downcase)}?s=35&d=identicon") %>
-
-</span>
-    <%= comment.commenter %><br> <small><%= comment.created_at %></small>  </td>
-<td><span style="float: right;"> <%= image_tag("http://unicornify.appspot.com/avatar/#{Digest::MD5.hexdigest(comment.commenter.downcase)}?s=35") %></span><%= comment.body %>  </td>
+  <td><span style="float: left;"><%= image_tag("http://cdn.libravatar.org/avatar/#{Digest::MD5.hexdigest(comment.commenter.downcase)}?s=35&d=identicon") %></span>
+    <%= comment.commenter %><br> <small><%= comment.created_at %></small>  
+  </td>
+  <td><span style="float: right;"> <%= image_tag("http://unicornify.appspot.com/avatar/#{Digest::MD5.hexdigest(comment.commenter.downcase)}?s=35") %></span>
+    <%= comment.body %>
+  </td>
+  <td>
+    <%= link_to 'Delete', [comment.post, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+  </td>
 </tr>

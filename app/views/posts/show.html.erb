@@ -1,5 +1,5 @@
 <div class="container">
-  <h1 class="page-header">listing post id <%= @post.id %></h1>
+  <h1 class="page-header"><small>post id <%= @post.id %> -</small> <%= @post.title %></h1>
     
   <div class="well large-well">    
      <strong><%= @post.title %></strong><br><small><%= @post.created_at %></small>
@@ -12,6 +12,7 @@
       <tr>
         <th>Commenter</th>
         <th>Comment</th>
+        <th>Action</th>
       </tr>
       <%= render @post.comments %>
     
